@@ -14,7 +14,13 @@ public class ProductRepository {
    public List<Product> listAll() {
         log.info("m=ProductRepository, m=listAll");
 
-        // acesso BD e retornando uma lista
+       try {
+           Thread.sleep(1000);
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+
+       // acesso BD e retornando uma lista
        final Product product1 = Product.builder()
                .sku("produto123")
                .price(new BigDecimal(10.00))
